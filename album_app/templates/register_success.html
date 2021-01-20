@@ -1,0 +1,31 @@
+{% extends "cover_layout.html" %}
+{% block content %}
+    <div class="d-flex w-100 h-100 mx-auto flex-column">
+
+        <header class="masthead mb-auto">
+            <div class="navbar navbar-dark bg-dark shadow-sm">
+                <div class="container d-flex justify-content-between">
+                    <a href='{{ url_for('welcome') }}' class="navbar-brand d-flex align-items-center" style="color: #000;">
+                        <img src="static/logo_empty.png" width="20" height="20" class="mr-2">
+                        <strong>Tagto｜注册</strong>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            <h1 class="cover-heading">恭喜</h1>
+            <p class="lead">你已注册成功</p>
+            <p class="lead">
+                <a class="btn btn-lg btn-secondary" href='{{ url_for('login') }}'>马上登陆</a>
+            </p>
+        </main>
+
+        <footer class="mastfoot mt-auto" style="padding-top: 0px; padding-bottom: 1.5rem;">
+            <div class="inner">
+                <p>页面模版来自 <a href="https://getbootstrap.com/">Bootstrap</a> ，由 <a href="https://github.com/DilunZhu">@DilunZhu</a> 进行修改。</p>
+            </div>
+        </footer>
+
+    </div>
+{% endblock content %}

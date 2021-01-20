@@ -1,0 +1,75 @@
+{% extends "album_layout.html" %}
+{% block content %}
+    <header>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <a href='{{ url_for('welcome') }}' class="navbar-brand d-flex align-items-center" style="color: #000;">
+                    <img src="static/logo_empty.png" width="20" height="20" class="mr-2">
+                    <strong>Tagto｜{{ web_title }}</strong>
+                </a>
+                <a href='{{ url_for('welcome') }}' class="btn btn-outline-secondary my-2 btn-sm">返回欢迎页</a>
+            </div>
+        </div>
+    </header>
+    <main role="main">
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="my-3 p-3 bg-white rounded shadow-sm">
+                    <h4 class="border-bottom pt-2 pb-3 mb-0 ml-2">特色功能</h4>
+                    <div class="d-flex text-muted pt-3 ml-2">
+                        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="40" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#ffffff" dy=".4em">1</text></svg>
+
+                        <p class="ml-3 pb-3 mb-0 lh-sm border-bottom" style="width: 90%;">
+                            <strong class="d-block text-gray-dark mb-1">完整的注册与登录系统</strong>
+                            - 通过表单和数据库进行用户注册/登录信息的储存和比对。<br>
+                            - 通过重定向和警告弹窗，向用户展示注册/登录成功与否。<br>
+                            - 通过登录验证，限制未登录用户访问需要登录的页面。<br>
+                            - 结合条件判断语句知识，根据用户登录信息，在网页上动态呈现对应的按钮和信息。<br>
+                            <br>
+                            <small><a href='{{ url_for('register') }}'>体验该功能组 →</a></small>
+                        </p>
+                    </div>
+                    <div class="d-flex text-muted pt-3 ml-2">
+                        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="40" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"></rect><text x="50%" y="50%" fill="#ffffff" dy=".4em">2</text></svg>
+
+                        <p class="ml-3 pb-3 mb-0 lh-sm border-bottom" style="width: 90%;">
+                            <strong class="d-block text-gray-dark mb-1">完整的图文上传与展示系统</strong>
+                            - 通过表单和数据库，对用户上传的图文信息进行储存和展示。<br>
+                            - 结合 for 循环语句知识，对已储存的用户图文信息进行展示，并展示出上传用户与上传时间。<br>
+                            - 通过警告弹窗和表单数据限制，提醒用户提供符合条件的数据。<br>
+                            - 通过数据库的查询函数，将用户的图文按时间顺序排列或按用户聚合。<br>
+                            <br>
+                            <small><a href='{{ url_for('upload') }}'>体验该功能组 →</a></small>
+                        </p>
+                    </div>
+                    <div class="d-flex text-muted pt-3 ml-2">
+                        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="40" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#ffffff" dy=".4em">3</text></svg>
+
+                        <p class="ml-3 pb-3 mb-0 lh-sm border-bottom" style="width: 90%;">
+                            <strong class="d-block text-gray-dark mb-1">智能图片标签</strong>
+                            - 借助表单和 Azure 的计算机视觉-图像分类 API 接口，对用户上传照片URL进行分析。<br>
+                            - 结合字典、列表、for 循环语句知识，提取出第一个图片标签，并在图文展示页中展示出来。<br>
+                            - 并利用了日志系统对用户的图片分析请求与结果进行了记录。<br>
+                            <br>
+                            <small><a href='{{ url_for('home') }}'>体验该功能组 →</a></small>
+                        </p>
+                    </div>
+                    <div class="d-flex text-muted pt-3 ml-2">
+                        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="40" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#FEAE00"></rect><text x="50%" y="50%" fill="#ffffff" dy=".4em">4</text></svg>
+
+                        <p class="ml-3 pb-3 mb-0 lh-sm border-bottom" style="width: 90%;">
+                            <strong class="d-block text-gray-dark mb-1">统一样式模版基础上的瀑布流布局与渐变动画</strong>
+                            - 在 Bootstrap 的统一样式模版基础上，整合 Masonry 与 Bootstrap 的网格系统和卡片组件，为图文展示页面创造出一个美观的瀑布流布局。<br>
+                            - 利用了 CSS 渐变与动画，在统一的 Bootstrap 模版基础上将网站欢迎页等位置的背景换为渐变色动画，呈现出一个动感的用户交互界面。<br>
+                            <br>
+                            <small><a href='{{ url_for('explore') }}'>体验该功能组 →</a></small>
+                        </p>
+                    </div>
+                    <small class="d-block text-end mt-3 ml-2">
+                        <a href="https://gitee.com/ZhuDilun/tagto-smart-picture-social-web-app-with-flask">查看本项目仓库，了解更多</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Tagto | {{ web_title }}</title>
+
+    <link rel="icon" href="static/logo_white.png" type="image/x-icon">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="static/album.css" rel="stylesheet">
+</head>
+<body>
+{% block content %}
+{% endblock %}
+<footer class="text-muted">
+    <div class="container">
+        <p class="float-right">
+            <a href="#">回到顶部 ↑</a>
+        </p>
+        <p>页面模版来自 <a href="https://getbootstrap.com/">Bootstrap</a> ，由 <a href="https://github.com/DilunZhu">@DilunZhu</a> 进行修改。</p>
+    </div>
+</footer>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script>
+    $(function(){
+        var $container = $('#masonry_row');
+        $container.imagesLoaded(function (){
+            $container.masonry({
+                columnWidth: '#masonry_item',
+                itemSelector: '#masonry_item'
+            })
+        });
+    });
+</script>
+<script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

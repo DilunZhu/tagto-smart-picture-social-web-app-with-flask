@@ -1,0 +1,42 @@
+{% extends "album_layout.html" %}
+{% block content %}
+    <header>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <a href='{{ url_for('welcome') }}' class="navbar-brand d-flex align-items-center" style="color: #000;">
+                    <img src="static/logo_empty.png" width="20" height="20" class="mr-2">
+                    <strong>Tagto｜{{ web_title }}</strong>
+                </a>
+                <a href='{{ url_for('welcome') }}' class="btn btn-outline-secondary my-2 btn-sm">返回欢迎页</a>
+            </div>
+        </div>
+    </header>
+    <main role="main">
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="my-3 p-3 bg-white rounded shadow-sm">
+                    <table class="table table-sm" style="font-size: 0.9rem; table-layout: fixed; word-break:break-all;">
+                        <thead>
+                        <tr>
+                            {% for row_title in the_row_titles %}
+                                <th style="border-top: 0px;">{{ row_title }}</th>
+                            {% endfor %}
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for log_row in the_data %}
+                            <tr>
+                                {% for item in log_row %}
+                                    <td>{{ item }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}
+

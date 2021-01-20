@@ -1,0 +1,63 @@
+{% extends "input_layout.html" %}
+{% block content %}
+
+    <form class="form-signin" method="post" action="">
+        {{ form.hidden_tag() }}
+        <img class="mb-4" src="static/logo_color.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">上传图片</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% if form.url.errors %}
+            {{ form.url(class="form-control is-invalid", placeholder="图片链接") }}
+            <div class="invalid-feedback">
+                {% for error in form.url.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.url(class="form-control", placeholder="图片链接") }}
+        {% endif %}
+
+        {% if form.title.errors %}
+            {{ form.title(class="form-control is-invalid", placeholder="标题") }}
+            <div class="invalid-feedback">
+                {% for error in form.title.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.title(class="form-control", placeholder="标题") }}
+        {% endif %}
+
+        {% if form.details.errors %}
+            {{ form.details(class="form-control is-invalid", placeholder="简介") }}
+            <div class="invalid-feedback">
+                {% for error in form.details.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.details(class="form-control", placeholder="简介") }}
+        {% endif %}
+
+        {{ form.submit(class="btn btn-lg btn-primary btn-block", style="margin-top: 20px !important;") }}
+
+        <div class="border-top pt-3" style="margin-top: 25px !important;">
+            <small class="text-muted">
+                ⚠️ 你所上传的图片暂无法删除。<br>
+                图片识别耗时约在30秒内，敬请等待。
+            </small>
+        </div>
+        <a class="btn btn-outline-secondary btn-sm" style="margin-top: 10px !important;" href='{{ url_for('home') }}'>返回主页</a>
+
+    </form>
+
+{% endblock content %}

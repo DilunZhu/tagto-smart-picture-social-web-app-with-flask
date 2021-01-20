@@ -1,0 +1,60 @@
+{% extends "input_layout.html" %}
+{% block content %}
+    <form class="form-signin" method="post" action="">
+        {{ form.hidden_tag() }}
+        <img class="mb-4" src="static/logo_color.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">注册</h1>
+
+        {% if form.username.errors %}
+            {{ form.username(class="form-control is-invalid", placeholder="用户名") }}
+            <div class="invalid-feedback">
+                {% for error in form.username.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.username(class="form-control", placeholder="用户名") }}
+        {% endif %}
+
+        {% if form.email.errors %}
+            {{ form.email(class="form-control is-invalid", placeholder="电子邮箱") }}
+            <div class="invalid-feedback">
+                {% for error in form.email.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.email(class="form-control", placeholder="电子邮箱", style="margin-bottom: 10px !important;") }}
+        {% endif %}
+
+        {% if form.password.errors %}
+            {{ form.password(class="form-control is-invalid", placeholder="密码") }}
+            <div class="invalid-feedback">
+                {% for error in form.password.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.password(class="form-control", placeholder="密码", style="margin-bottom: 0px !important;") }}
+        {% endif %}
+
+        {% if form.confirm_password.errors %}
+            {{ form.confirm_password(class="form-control is-invalid", placeholder="确认密码", style="margin-bottom: 0px !important;") }}
+            <div class="invalid-feedback">
+                {% for error in form.confirm_password.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.confirm_password(class="form-control", placeholder="确认密码") }}
+        {% endif %}
+
+        {{ form.submit(class="btn btn-lg btn-primary btn-block", style="margin-top: 20px !important;") }}
+        <div class="border-top pt-3" style="margin-top: 25px !important;">
+            <small class="text-muted">
+                已有账号？<a href="{{ url_for('login') }}">马上登陆</a>
+            </small>
+        </div>
+        <a class="btn btn-outline-secondary btn-sm" style="margin-top: 10px !important;" href='{{ url_for('welcome') }}'>返回欢迎页</a>
+    </form>
+{% endblock content %}
